@@ -26,8 +26,10 @@ function App() {
       <h1> To Do List 📃</h1>
       <form onSubmit={(event)=> {
           event.preventDefault();
-          setTodos([...todos, {taskId: todos.length + 1, isFinished: false, text: todo}])
-          setTodo("");
+          if(todo){
+            setTodos([...todos, {taskId: todos.length + 1, isFinished: false, text: todo}])
+            setTodo("");
+          } 
         }}>
         <input type="text" style={{height:"30px", width:"60%"}} value={todo} onChange={(event)=>setTodo(event.target.value)}/> <button>add todo</button>
       </form>
