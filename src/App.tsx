@@ -32,7 +32,7 @@ function App() {
         <input type="text" style={{height:"30px", width:"60%"}} value={todo} onChange={(event)=>setTodo(event.target.value)}/> <button>add todo</button>
       </form>
         <button onClick={()=> {localStorage.clear(); setTodos([])}}> clear all </button>
-        {todos.map((task)=> <Task key={task.taskId} isFinished={task.isFinished} text={task.text}/>)}
+        {todos.map((task, index)=> <Task key={task.taskId} taskId={index} isFinished={task.isFinished} text={task.text}/>)}
     </>
   )
 }
